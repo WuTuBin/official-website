@@ -1,18 +1,30 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <Header></Header>
+    <router-view></router-view>
+    <el-button type="primary" class="top" @click="_top">顶部</el-button>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
-
+import { Component, Vue } from "vue-property-decorator";
+import Header from "@/components/Header.vue"; // @ is an alias to /src
+import About from "./About.vue"
 @Component({
   components: {
-  HelloWorld,
-  },
-  })
-export default class Home extends Vue {}
+    Header,About
+  }
+})
+export default class Home extends Vue {
+  _top(){
+      window.document.documentElement.scrollTop = 0
+    }
+}
 </script>
+<style lang="stylus" scoped>
+.top{
+  position fixed
+  right 30px
+  bottom 30px
+}
+</style>
