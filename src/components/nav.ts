@@ -1,0 +1,21 @@
+export const Obj = {
+  "前端":{
+    "html5":"/html5",
+    "css3":"/css3",
+    "javascript":"/javascript",
+    "正则表达式":"/regular",
+    "功能":"/gongneng",
+    "框架":{
+      "Vue":"/Vue",
+      "React":"/React"
+    },
+    "概念":"/concept"
+  },
+  "后端":{
+    "nodejs":"/nodejs",
+    "php":"/php"
+  },
+  "typeScript":"/typeScript",
+  "易经":"/yijing",
+  "生活":"/life"
+}

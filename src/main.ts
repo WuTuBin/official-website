@@ -9,7 +9,6 @@ import '@/stylus/base.styl'
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
-
 new Vue({
   router,
   store,

@@ -24,6 +24,7 @@
     </el-aside>
     <el-main>
       <router-view></router-view>
+      
     </el-main>
   </el-container>
 </template>
@@ -31,15 +32,26 @@
 import Vue from "vue";
 import { Obj } from "./nav";
 export default Vue.extend({
-  data() {
+  data(){
     return {
-      activeIndex: "",
-      obj: {}
-    };
+      activeIndex:'',
+      obj:{}
+    }
   },
-  created() {
-    this.activeIndex = this.$route.fullPath;
-    this.obj = Obj;
+  created(){
+    this.activeIndex = this.$route.fullPath
+    this.obj = Obj
+  },
+  methods:{
+    _open(key:any, keyPath:any){
+      // this.$router
+      this.$router.push(key)
+    },
+    _close(key:any, keyPath:any){
+      // console.log(key,keyPath)
+      this.$router.push(key)
+    }
   }
 });
 </script>
+

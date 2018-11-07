@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <!-- <link rel="stylesheet" href="<%= BASE_URL %>base.styl"> -->
-    <title>official-website</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but official-website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <!-- <link rel="stylesheet" href="<%= BASE_URL %>base.styl"> -->
+  <title>吴土彬官网</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but official-website doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+    let str = ''
+    var save = function (e) {
+       e.clipboardData.setData('text/plain', str); //下面会说到clipboardData对象
+       e.preventDefault(); //阻止默认行为
+    }
+    window.copy = function () {
+      let arr = document.getElementsByClassName('code')
+      arr = Array.from(arr)
+
+      arr.forEach(el => {
+        let span = document.createElement('span')
+        span.innerHTML = '复制'
+        el.append(span)
+        span.addEventListener("click", function () {
+          let code = this.parentNode.firstElementChild
+          str = code.innerHTML
+          str = str.replace(/^\s*|\s*$/g, '')
+          document.addEventListener('copy',save);
+          if (document.execCommand('copy')) {
+            console.log('copy成功')
+          }
+        }, false)
+
+      });
+    }
+  </script>
+</body>
+
 </html>

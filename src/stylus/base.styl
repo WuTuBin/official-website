@@ -1,10 +1,27 @@
 @charset "utf-8";
-body
+html,body
   margin 0
   padding 0
-
+  width 100%;
+  height: 100%;
+  overflow auto;
 
 .code
   border 1px solid #eee
   border-radius 6px
   background-color #ccc
+  white-space pre-wrap
+  position relative
+  &>span 
+    background: #eee;
+    padding: 4px;
+    border-radius: 4px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    cursor pointer
+.alt
+  position fixed
+  bottom 10px
+  left 10px
+  z-index 1

@@ -17,7 +17,7 @@ import About from "./About.vue"
 })
 export default class Home extends Vue {
   _top(){
-      window.document.documentElement.scrollTop = 0
+      window.document.body.scrollTop = 0
     }
 }
 </script>

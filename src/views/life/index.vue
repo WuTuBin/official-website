@@ -24,22 +24,34 @@
     </el-aside>
     <el-main>
       <router-view></router-view>
+
     </el-main>
   </el-container>
 </template>
 <script lang="ts">
-import Vue from "vue";
 import { Obj } from "./nav";
+import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
       activeIndex: "",
-      obj: {}
+      obj:{}
     };
   },
   created() {
     this.activeIndex = this.$route.fullPath;
-    this.obj = Obj;
+    this.obj = Obj
+  },
+  methods: {
+    _open(key: any, keyPath: any) {
+      // this.$router
+      this.$router.push(key);
+    },
+    _close(key: any, keyPath: any) {
+      // console.log(key,keyPath)
+      this.$router.push(key);
+    }
   }
 });
 </script>
+
