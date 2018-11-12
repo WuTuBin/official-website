@@ -22,9 +22,9 @@
         </template>
       </el-menu>
     </el-aside>
-    <el-main>
+    <el-main ref="top">
       <router-view></router-view>
-
+      <el-button type="primary" class="top" @click="_top">顶部</el-button>
     </el-main>
   </el-container>
 </template>
@@ -35,12 +35,12 @@ export default Vue.extend({
   data() {
     return {
       activeIndex: "",
-      obj:{}
+      obj: {}
     };
   },
   created() {
     this.activeIndex = this.$route.fullPath;
-    this.obj = Obj
+    this.obj = Obj;
   },
   methods: {
     _open(key: any, keyPath: any) {
@@ -50,8 +50,15 @@ export default Vue.extend({
     _close(key: any, keyPath: any) {
       // console.log(key,keyPath)
       this.$router.push(key);
+    },
+    _top() {
+      let el: any = this.$refs.top;
+      el.$el.scrollTop = 0;
     }
   }
 });
 </script>
 
+<style lang="stylus" scoped>
+
+</style>

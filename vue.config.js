@@ -1,8 +1,6 @@
 module.exports = {
   baseUrl: "/",//基本路径
-  // baseUrl: process.env.NODE_ENV === 'production' ?
-  //   '/production-sub-path/' :
-  //   '/'
+  lintOnSave:false,//禁止eslint
   outputDir:"dist",//build输出的目录
   devServer: {
     // open: process.platform === 'darwin',

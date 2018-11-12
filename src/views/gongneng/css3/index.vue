@@ -1,16 +1,16 @@
 <template>
   <div>
-    <h2>html编码</h2>
+    <h2>单行文字缩略</h2>
     <pre class="code"><code>
-      {{fn.htmlcode}}
+      {{fn.single}}
     </code></pre>
-    <h2>html译码</h2>
+    <h2>多行文字缩略</h2>
     <pre class="code"><code>
-        {{fn.htmldecode}}
+        {{fn.multi}}
     </code></pre>
-    <h2>复制内容到剪贴板</h2>
+    <h2>隐藏滚动条</h2>
     <pre class="code"><code>
-        {{fn.copy}}
+        {{fn.scroll}}
     </code></pre>
   </div>
 </template>

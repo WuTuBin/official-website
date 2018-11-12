@@ -15,7 +15,9 @@ export const Obj = {
     "nodejs":"/nodejs",
     "php":"/php"
   },
+  "git":"/git",
   "typeScript":"/typeScript",
   "易经":"/yijing",
-  "生活":"/life"
+  "生活":"/life",
+  "英语":"/english",
 }

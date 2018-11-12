@@ -19,7 +19,8 @@ export default Vue.extend({
     // console.log(str)
   },
   mounted(){
-    window.copy()
+    let win:any = window;
+    win.copy();
   }
 });
 </script>

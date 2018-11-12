@@ -4,6 +4,10 @@ export const Obj = {
   "对象的发展":"/javascript/object",
   "es6":"/javascript/es6",
   "对象":{
-    "Array":"/javascript/object/array"
+    "Array":"/javascript/object/array",
+    "String":"/javascript/object/string"
+  },
+  "事件":{
+
   }
 }

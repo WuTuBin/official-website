@@ -22,8 +22,9 @@
         </template>
       </el-menu>
     </el-aside>
-    <el-main>
+    <el-main ref="top">
       <router-view></router-view>
+      <el-button type="primary" @click="_top" class="top">顶部</el-button>
     </el-main>
   </el-container>
 </template>

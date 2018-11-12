@@ -1,46 +1,45 @@
 <template>
   <el-container>
     <el-aside width="200px">
-      <el-menu :default-active="activeIndex" :router="true" @open="_open" @close="_close">
-        <el-menu-item index="/english/introduce">
-          英语介绍
-        </el-menu-item>
-        <el-submenu index="/html5/element">
-          <template slot="title">
-            <i class="el-icon-menu"></i>
-            <span>元素</span>
-          </template>
-          <el-menu-item index="/html5/element/img">img</el-menu-item>
-        </el-submenu>
+      <el-menu :default-active="activeIndex" :router="true">
+        <template v-for="(item,index) in obj">
+          <el-menu-item :key="index" :index="item" v-if="typeof(item)=='string'">{{index}}</el-menu-item>
+          <el-submenu :key="index" :index="index" v-if="typeof(item)=='object'">
+            <template slot="title">
+              <i class="el-icon-menu"></i>
+              <span>{{index}}</span>
+            </template>
+            <template v-for="(item1,index1) in item">
+              <el-menu-item :key="index1" :index="item1" v-if="typeof(item1)=='string'">{{index1}}</el-menu-item>
+              <el-submenu :key="index1" :index="index1" v-if="typeof(item1)=='object'">
+                <template slot="title">
+                  {{index1}}
+                </template>
+                <el-menu-item :key="index2" :index="item2" v-for="(item2,index2) in item1">{{index2}}</el-menu-item>
+              </el-submenu>
+            </template>
+          </el-submenu>
+        </template>
       </el-menu>
     </el-aside>
     <el-main>
       <router-view></router-view>
-      
     </el-main>
   </el-container>
 </template>
 <script lang="ts">
 import Vue from "vue";
+import { Obj } from "./nav";
 export default Vue.extend({
-  data(){
+  data() {
     return {
-      activeIndex:''
-    }
+      activeIndex: "",
+      obj: {}
+    };
   },
-  created(){
-    this.activeIndex = this.$route.fullPath
-  },
-  methods:{
-    _open(key:any, keyPath:any){
-      // this.$router
-      this.$router.push(key)
-    },
-    _close(key:any, keyPath:any){
-      // console.log(key,keyPath)
-      this.$router.push(key)
-    }
+  created() {
+    this.activeIndex = this.$route.fullPath;
+    this.obj = Obj;
   }
 });
 </script>
-

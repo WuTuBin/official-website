@@ -28,4 +28,13 @@ function (str) {
   }
 }
 `
-export default {htmldecode,htmlcode}
+let copy = `
+let str = ''
+var save = function (e) {
+  e.clipboardData.setData('text/plain', str); //下面会说到clipboardData对象
+  e.preventDefault(); //阻止默认行为
+}
+document.addEventListener('copy',save);
+document.execCommand('copy')
+`
+export default {htmldecode,htmlcode,copy}
