@@ -1,5 +1,5 @@
 export const Obj = {
-  "vue介绍":"/react/introduce",
+  "react介绍":"/react/introduce",
   "生命周期":"/react/life",
   "组件":"/react/component",
   "viser":{

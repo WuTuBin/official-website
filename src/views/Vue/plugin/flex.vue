@@ -47,6 +47,9 @@ export default Vue.extend({
       </div>`
     }
   },
+  created(){
+    console.log("1:"+window.history.length)
+  },
   mounted(){
     let win:any = window
     win.copy()

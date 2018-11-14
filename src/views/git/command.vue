@@ -1,5 +1,22 @@
 <template>
   <div>
+    <h2>从本地到github仓库</h2>
+    <p>
+      git init：初始化一个本地仓库<br>
+      git add XXX/git add .: 将文件添加到[暂存区]，在XXX处输入文件名。前者指定文件，后者一次性全部添加。<br>
+      git commit -m "XXX": 将add过的内容[正式提交]到本地仓库(.git就是本地地址),在XXX处可输入备注信息。<br>
+      git pull: (当远程仓库被更改了，必须重新拉一下，并处理好冲突)<br/>
+      git push: 把本地仓库推到github <br>
+      首次提交：<br>
+      SSH方式：git remote add origin git@github.com:你的信息/仓库名.gi<br>
+      
+      git push -u origin master <br>
+      https方式：
+      git status -sb: 显示当前所有文件的状态 <br>
+      git log: 可查看历史上的变动 <br>
+      git remote add origin git@github.com:你的信息/仓库名.git  将本地仓库与远程仓库关联<br>
+      git remote set-url origin git@github.com:你的信息/仓库名.git  重新关联<br>
+    </p>
     <h2>分支管理</h2>
     <div>
       git branch -l :查看本地分支

@@ -6,13 +6,12 @@ export const words = {
     },
   ],
   b: [
-    {
-      key: "about",
-      val: "关于",
-    },
+    {key: "about",val: "关于"},
   ],
   c: [],
-  d: [],
+  d: [
+    {key: "dynamic",val: "动态；动力"},
+  ],
   e: [],
   f: [],
   g: [],
@@ -28,13 +27,18 @@ export const words = {
     { key: "pattern", val: "模式" }
   ],
   q: [],
-  r: [],
+  r: [
+    {key:"resolve",val:"解决；决心；分解"}
+  ],
   s: [
+    { key: "segment", val: "段；部分；分割" },
     { key: "signature", val: "签名" }
   ],
   t: [],
   u: [],
-  v: [],
+  v: [
+    {key:"vendor",val:"卖主；小贩；供应商"}
+  ],
   w: [],
   x: [],
   y: [],

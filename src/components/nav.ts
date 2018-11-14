@@ -15,8 +15,13 @@ export const Obj = {
     "nodejs":"/nodejs",
     "php":"/php"
   },
+  "数据库":{
+    "mysql":"/mysql"
+  },
   "git":"/git",
+  "python":"/python",
   "typeScript":"/typeScript",
+  "网络":"/network",
   "易经":"/yijing",
   "生活":"/life",
   "英语":"/english",
